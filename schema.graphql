@@ -1,0 +1,28 @@
+type Block @entity {
+  id: ID! # The block hash
+  height: BigInt!
+}
+
+type TransferEvent @entity {
+  id: ID!
+  blockHeight: BigInt!
+  txHash: String!
+  sender: String
+  recipient: String!
+  amount: String!
+}
+
+type Transaction @entity {
+  id: ID!
+  blockHeight: BigInt!
+  timestamp: String!
+}
+
+type Message @entity {
+  id: ID!
+  blockHeight: BigInt!
+  txHash: String!
+  contract: String!
+  sender: String!
+  executeMsg: String!
+}
